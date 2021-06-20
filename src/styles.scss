@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap";
+
+@font-face {
+    font-family: 'beyno';
+    src: url(/src/assets/fonts/beyno.ttf);
+}
+
+@import "/src/assets/scss/variables";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "/src/assets/scss/typography";
+@import "/src/assets/scss/content";
+@import "/src/assets/scss/navbar";
+@import "/src/assets/scss/utilities";
+@import "/src/assets/scss/common";
+
+//icon
+@import 'material-icons/iconfont/material-icons.css';
+
+
+//Mixins
+@import "/src/assets/scss/mixins/buttons";
+
+// Components
+@import "/src/assets/scss/components/buttons";
+@import "/src/assets/scss/components/cards";
+@import "/src/assets/scss/components/forms";
+@import "/src/assets/scss/components/modals";

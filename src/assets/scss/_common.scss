@@ -1,0 +1,58 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  color: #000000;
+}
+
+body.body-top-padding {
+  padding-top: 167px;
+}
+
+body a:hover {
+  text-decoration: none;
+}
+
+body.sidebar-open .fixed-top {
+  background-color: transparent;
+}
+
+body.sidebar-open .fixed-top .navbar-brand-wrapper img {
+  display: none;
+}
+
+body.sidebar-open::before {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.ngv-ml-auto {
+  margin-left: auto !important;
+}
+.ngv-pl-2rem {
+  padding-left: 2rem !important;
+}
+.ngv-footer {
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+@font-face {
+  font-family: 'beyno';
+  src: url(../fonts/beyno.ttf);
+}
+.ngv-brand-name {
+  font-family: 'beyno';
+  font-size: 1rem;
+  font-weight: 500;
+  // color: #fc7341;
+  padding-left: 10px;
+}
