@@ -17,6 +17,10 @@ const routes: Routes = [
             {
                 path: 'dashboard',
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+            },
+            {
+                path: 'covid',
+                loadChildren: () => import('./ncovid/ncovid.module').then(m => m.NcovidModule)
             }
         ]
     },

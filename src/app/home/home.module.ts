@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '../layout/layout.module';
+import { NCovidService } from '../services/ncovid.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,11 @@ import { LayoutModule } from '../layout/layout.module';
     LayoutModule
   ],
   declarations: [HomeComponent],
-  exports: []
+  exports: [
+
+  ],
+  providers: [
+    NCovidService
+  ]
 })
 export class HomeModule { }
