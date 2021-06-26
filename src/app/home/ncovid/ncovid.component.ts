@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NCovidService } from 'src/app/services/ncovid.service';
 import { Chart } from 'angular-highcharts';
+import { HC_VN_KEY } from 'src/app/services/hc-key.constant';
 
 @Component({
   selector: 'app-ncovid',
@@ -12,11 +13,12 @@ export class NcovidComponent implements OnInit {
   chart: any;
   dataReport: any[] = [];
   dataSummary: any[] = [];
-
+  dataSummaryFull: any;
   resourceAPI: any = {
     author: '',
     sourceUrl: ''
   }
+  hcKeyVN: any = HC_VN_KEY;
 
   constructor(private covidService: NCovidService) {
     this.dataSummary = [
@@ -75,6 +77,7 @@ export class NcovidComponent implements OnInit {
   getSummary() {
     this.covidService.getSummary().subscribe((res: any) => {
       console.log(res);
+      this.dataSummaryFull = res;
       this.dataSummary.forEach(element => {
         if (element.id in res) {
           element.value = res[element.id];
