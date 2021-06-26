@@ -24,7 +24,7 @@ export class HeaderNavComponent implements OnInit {
       id: 'home',
       name: 'Home',
       path: '/home',
-      active: true,
+      active: false,
     },
     {
       id: 'dashboard',
@@ -36,7 +36,7 @@ export class HeaderNavComponent implements OnInit {
       id: 'covid',
       name: 'Covid',
       path: '/covid',
-      active: false,
+      active: true,
     }
   ]
   sideBarState: boolean = false;

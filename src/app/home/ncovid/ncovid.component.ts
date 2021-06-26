@@ -9,19 +9,77 @@ import { Chart } from 'angular-highcharts';
 })
 export class NcovidComponent implements OnInit {
 
-  dataReport: any = [];
   chart: any;
-  constructor(private covidService: NCovidService) { }
+  dataReport: any[] = [];
+  dataSummary: any[] = [];
+
+  resourceAPI: any = {
+    author: '',
+    sourceUrl: ''
+  }
+
+  constructor(private covidService: NCovidService) {
+    this.dataSummary = [
+      {
+        id: 'infected',
+        name: 'Lây nhiễm',
+        value: 0,
+        options: {
+          urlImg: 'assets/images/covid/coronavirus.png',
+          bgColor: '#FA9694'
+        }
+      },
+      {
+        id: 'treated',
+        name: 'Điều trị',
+        value: 0,
+        options: {
+          urlImg: 'assets/images/covid/patient.png',
+          bgColor: '#9BD0F8'
+        }
+      },
+      {
+        id: 'recovered',
+        name: 'Hồi phục',
+        value: 0,
+        options: {
+          urlImg: 'assets/images/covid/recovered.png',
+          bgColor: '#AFDAB1'
+        }
+      },
+      {
+        id: 'deceased',
+        name: 'Tử vong',
+        value: 0,
+        options: {
+          urlImg: 'assets/images/covid/dead.png',
+          bgColor: '#B8B7B7'
+        }
+      },
+    ]
+   }
 
   ngOnInit() {
+    this.getSummary();
     this.getReport();
   }
 
   getReport() {
-    this.covidService.getReport().subscribe(res => {
+    this.covidService.getReport().subscribe((res: any) => {
       console.log(res);
       this.drawChart(res);
-
+      this.resourceAPI.author = res.author;
+      this.resourceAPI.sourceUrl = res.sourceUrl;
+    })
+  }
+  getSummary() {
+    this.covidService.getSummary().subscribe((res: any) => {
+      console.log(res);
+      this.dataSummary.forEach(element => {
+        if (element.id in res) {
+          element.value = res[element.id];
+        }
+      });
     })
   }
   drawChart(data: any) {
