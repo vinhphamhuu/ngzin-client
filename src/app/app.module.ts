@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeModule } from "./home/home.module";
 import { HomeRoutingModule } from "./home/home-routing.module";
 import { ChartModule } from 'angular-highcharts';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [	
@@ -18,7 +20,13 @@ import { ChartModule } from 'angular-highcharts';
     AppRoutingModule,
     HomeModule,
     HomeRoutingModule,
-    ChartModule
+    ChartModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

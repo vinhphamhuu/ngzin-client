@@ -9,7 +9,7 @@ import { NCovidService } from '../services/ncovid.service';
   imports: [
     CommonModule,
     RouterModule,
-    LayoutModule
+    LayoutModule,
   ],
   declarations: [HomeComponent],
   exports: [
