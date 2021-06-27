@@ -1,46 +1,65 @@
-<div class="limiter">
-  <div class="container-login100">
-    <div class="wrap-login100">
-      <div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
-        <span class="login100-form-title-1">
-          Sign In
-        </span>
-      </div>
-
-      <form class="login100-form validate-form">
-        <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-          <span class="label-input100">Username</span>
-          <input class="input100" type="text" name="username" placeholder="Enter username">
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
-          <span class="label-input100">Password</span>
-          <input class="input100" type="password" name="pass" placeholder="Enter password">
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="flex-sb-m w-full p-b-30">
-          <div class="contact100-form-checkbox">
-            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-            <label class="label-checkbox100" for="ckb1">
-              Remember me
-            </label>
-          </div>
-
-          <div>
-            <a href="#" class="txt1">
-              Forgot Password?
-            </a>
-          </div>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+<span>{{ rxTime | date: 'hh:mm a' }}</span>
+<div>
+	<div class="sf-background">
+		<div id="sf-background-fog"></div>
+	</div>
+	<div class="row p-5">
+    <div class="col-12">
+			<div class="row">
+				<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12"></div>
+				<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+					<div class="row sf-user-data">
+						<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12"></div>
+						<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 sf-clock">
+							<i class="far fa-clock"></i>
+							<div class="sf-time-and-day">
+								<h4>{{ rxTime | date: 'hh:mm a' }}</h4>
+								<h6>WEDNESDAY</h6>
+							</div>
+							<img class="sf-user-profile-image" src="https://assets.codepen.io/2940219/default.png" />
+							<h5 class="sf-username">tacosontitan</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="row sf-focal-point">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+					<h3>HUNTERS</h3>
+					<div class="row sf-users left">
+						<div *ngFor="let user of playerData.left" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+							<img [src]="user.image" />
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" style="padding: 0;">
+					<!-- <div class="col-12 sf-clan-area">
+						<div class="sf-logo-area">
+							<img class="sf-clan-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Wolf.png" />
+							<img id="loading-image" data-progress="0" class="sf-clan-logo-loading" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2940219/Wolf%20(GREEN).png" />
+							<img id="loading-image" data-progress="0" class="sf-clan-logo-loading" src="assets/images/origami.svg" />
+						</div>
+					</div> -->
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+					<h3>HUNTED</h3>
+					<div class="row sf-users right">
+						<div *ngFor="let user of playerData.right" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+							<img [src]="user.image" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 sf-menu-system">
+			<ul class="sf-menu">
+				<li>PROFILE</li>
+				<li>COVID</li>
+				<li>SETTINGS</li>
+				<li>THANKS</li>
+			</ul>
+		</div>
+	</div>
 </div>

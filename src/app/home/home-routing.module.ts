@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
@@ -21,9 +22,18 @@ const routes: Routes = [
             {
                 path: 'covid',
                 loadChildren: () => import('./ncovid/ncovid.module').then(m => m.NcovidModule)
+            },
+            {
+                path: 'me',
+                loadChildren: () => import('./my-profile/my-profile.module').then(m => m.MyProfileModule)
             }
         ]
     },
+    // {
+    //     path: "me",
+    //     component: MyProfileComponent,
+    //     pathMatch: "full"
+    // },
     {
         path: "404",
         component: NotFoundComponent,

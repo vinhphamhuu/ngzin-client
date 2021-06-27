@@ -1,0 +1,85 @@
+
+$margin: 32px;
+$margin-vertical: $margin * 0.85;
+
+$col-secondary: #ed4e7c;
+$col-primary: #36e2be;
+
+$content-width: 480px;
+$banner-height: 200px;
+
+%text-big {
+	font-size: 1.5em;
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+	padding: 0.5em 1.5em;
+	
+	font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+	
+	border: 1px solid;
+	border-radius: 0.5em;
+	cursor: pointer;
+	
+	transition: background 0.2s, color 0.2s;
+	
+	&:hover {
+		background: white;
+		color: $col-primary;
+	}
+}
+
+.main {
+	width:100%;	
+    height: 100vh;
+	color: white;
+	background-color: #346271;
+	background-image: radial-gradient(ellipse 720px 100% at top center, #278572, #271956);
+	background-attachment: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .banner {
+        box-sizing: border-box;
+        height: $banner-height;
+        background-image: url('https://image.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg');
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        .banner-content {
+            box-sizing: border-box;
+            width: ($content-width - $banner-height) / 2;
+            height: 100%;
+            position: relative;
+            padding: $margin-vertical $margin;
+            float: right;
+            
+            text-align: right;
+            &>* {
+                z-index: 1;
+                float: right;
+            }
+            
+            &>*:nth-child(1) {
+                width: 300%;
+                float: right;
+            }
+            
+            &>*:nth-child(2) {
+                width: 260%;
+            }
+        }
+        .banner-button {
+            position: absolute;
+            bottom: $margin;
+            right: $margin;
+        }
+    }
+    .content {
+        padding: 1rem;
+    }
+
+}
+

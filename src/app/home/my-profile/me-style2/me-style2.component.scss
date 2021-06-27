@@ -1,0 +1,296 @@
+
+$w-circle:6px;
+$h-circle:6px;
+$m-circle:-3px;
+$p-circle:(-1px * $w-circle/2px);
+.little-circle {
+  content: "";
+  width: $w-circle;
+  height: $h-circle;
+  border-radius: 50%;
+  position: absolute;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+.gradient-top {
+  background: #e56e54;
+  background: -moz-linear-gradient(left, #e56e54 1%, #f8d36b 50%, #48b1ab 100%);
+  background: -webkit-linear-gradient(left, #e56e54 1%, #f8d36b 50%, #48b1ab 100%);
+  background: linear-gradient(to right, #e56e54 1%, #f8d36b 50%, #48b1ab 100%);
+}
+
+// @import "compass/reset";
+// @import "compass/css3";
+body {
+  background-color: rgba(0, 0, 0, .5);
+  font-family: Lato;
+}
+
+.card {
+  .frosted-glass{
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:5;
+    opacity:0;
+    transition: opacity .25s linear;
+    &.pan-active{
+      opacity:1;
+    }
+    &:before{
+      background:url(https://ucarecdn.com/1248611d-a61f-4bf0-a9d5-9dc185594074/christianferrer546458unsplash.jpg) 45% 82% no-repeat;
+      filter: blur(17px);
+      content:"";
+      width:100%;
+      height:100%;
+      display:block;
+    }
+    &:after{
+      content:"";
+      width:100%;
+      height:100%;
+      display:block;
+      background-color:rgba(0,0,0,.6);
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  }
+  &:before {
+    content: "";
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    @extend .gradient-top;
+  }
+  &:after {
+    content: "";
+    width: 20%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    background-color: #585a5e;
+  }
+  width: 100%;
+  height:100%;
+  position:absolute;
+  overflow:hidden;
+  background-color:#fff;
+  left:50%;
+  top:50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  .img-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    img {
+      max-width: 200%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-47%, 0);
+      border-radius: 5px;
+    }
+  }
+  .profile {
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, .47);
+      z-index: 4;
+    }
+    .introduce {
+      position: absolute;
+      bottom: 56px;
+      z-index: 5;
+      padding: 0 22px;
+      font-weight: bold;
+      p.name {
+        font-size: 1.85em;
+        color: #fff;
+        letter-spacing: 2px;
+        i {
+          display: block;
+          &:last-of-type {
+            padding-top: 12px;
+          }
+        }
+      }
+      p.description {
+        color: #c8cac9;
+        font-size: 0.91em;
+        position: relative;
+        padding-top: 20px;
+        padding-left: 18px;
+        i {
+          letter-spacing: 1px;
+          padding-left: 2px;
+        }
+        &:before {
+          @extend .little-circle;
+          width: 9px;
+          height: 9px;
+          left: 0;
+          bottom: 3px;
+          background-color: #00a89e;
+        }
+      }
+      p.message {
+        color: #c8cac9;
+        font-weight: normal;
+        font-weight: 300;
+        padding-top: 20px;
+        line-height: 1.37;
+        color: #f2f4f6;
+        padding-bottom: 20px;
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+  .more-detail {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: -56px;
+    z-index: 10;
+    background-color: #ffffff;
+    padding: 0 22px;
+    box-sizing: 'border-box';
+    color: #5c6169;
+    transition: transform .25s linear;
+    &.pan-active {
+      transform: translateY(-72%);
+    }
+    .here-me {
+      cursor: pointer;
+      height: 56px;
+      position: relative;
+      border-bottom: 2px solid #ebebeb;
+      &:before {
+        height: 2px;
+        content: "";
+        width: 10px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        display: block;
+        background-color: #d0d3d6;
+        margin-left: -5px;
+      }
+      p {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translate(0, -50%);
+        span {
+          display: block;
+          &:first-of-type {
+            float: left;
+            width: 70%;
+            i {
+              color: #d4d7d9;
+              padding-right: 5px;
+            }
+          }
+          &:last-of-type {
+            float: right;
+            width: 30%;
+            text-align: right;
+          }
+        }
+      }
+    }
+    .box-tag {
+      padding: 10px 9px;
+      float: left;
+      color: #eff7f5;
+      background-color: #2caca4;
+      border-radius: 4px;
+      margin: 5px 6px;
+    }
+    h2 {
+      padding-top: 18px;
+      padding-bottom: 8px;
+    }
+    .like {
+      ul {
+        // @include pie-clearfix();
+      }
+      li {
+        @extend .box-tag;
+      }
+    }
+    .also-like {
+      border-bottom: 2px solid #ebebeb;
+      padding-bottom: 18px;
+      ul {
+        // @include pie-clearfix();
+      }
+      li {
+        @extend .box-tag;
+        background-color: #ebeced;
+        color: #515a62;
+      }
+    }
+    .twitter {
+      padding-bottom: 18px;
+    //   @include pie-clearfix();
+     .avatar{
+        width:25%;
+        height:100%;
+        float:left;
+        position:relative;
+      }
+      .twit-post {
+        position: relative;
+        width:75%;
+        float:right;
+        
+      }
+      p.name {
+        font-weight: bold;
+        padding-top: 7px;
+        padding-bottom: 5px;
+      }
+      p.twit {
+        color: #6ab9b3;
+        padding-bottom: 9px;
+      }
+      p.message {
+        line-height: 1.2;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        left: 0;
+        top: 0;
+        position: absolute;
+        border-radius: 50%;
+        background: url(https://ucarecdn.com/1248611d-a61f-4bf0-a9d5-9dc185594074/christianferrer546458unsplash.jpg) center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

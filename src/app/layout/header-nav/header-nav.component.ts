@@ -37,6 +37,12 @@ export class HeaderNavComponent implements OnInit {
       name: 'Covid',
       path: '/covid',
       active: true,
+    },
+    {
+      id: 'me',
+      name: 'About me',
+      path: '/me',
+      active: false,
     }
   ]
   sideBarState: boolean = false;
