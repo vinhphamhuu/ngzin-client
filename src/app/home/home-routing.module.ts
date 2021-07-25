@@ -21,6 +21,10 @@ const routes: Routes = [
             {
                 path: 'covid',
                 loadChildren: () => import('./ncovid/ncovid.module').then(m => m.NcovidModule)
+            },
+            {
+                path: 'my-profile',
+                loadChildren: () => import('./my-profile/my-profile.module').then(m => m.MyProfileModule)
             }
         ]
     },
