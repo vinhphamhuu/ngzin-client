@@ -36,6 +36,12 @@ export class HeaderNavComponent implements OnInit {
       id: 'covid',
       name: 'Covid',
       path: '/covid',
+      active: false,
+    },
+    {
+      id: 'my-profile',
+      name: 'My Profile',
+      path: '/my-profile',
       active: true,
     }
   ]

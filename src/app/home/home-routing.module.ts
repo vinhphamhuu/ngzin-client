@@ -10,9 +10,13 @@ const routes: Routes = [
         path: "",
         component: HomeComponent,
         children: [
+            // {
+            //     path: 'home',
+            //     loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule)
+            // },
             {
                 path: 'home',
-                loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule)
+                loadChildren: () => import('./my-home/my-home.module').then(m => m.MyHomeModule)
             },
             {
                 path: 'dashboard',

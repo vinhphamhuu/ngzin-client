@@ -22,6 +22,7 @@
     "@angular/router": "~12.0.5",
     "@angular/service-worker": "~12.0.5",
     "@mdi/font": "^5.9.55",
+    "@ngneat/tailwind": "^7.0.3",
     "angular-highcharts": "^12.0.0",
     "bootstrap": "^5.0.1",
     "highcharts": "^9.1.2",
@@ -34,6 +35,8 @@
     "@angular-devkit/build-angular": "~12.0.5",
     "@angular/cli": "~12.0.5",
     "@angular/compiler-cli": "~12.0.5",
+    "@tailwindcss/forms": "0.3.3",
+    "@tailwindcss/typography": "0.4.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",
@@ -42,6 +45,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "tailwindcss": "2.2.7",
     "typescript": "~4.2.3"
   }
 }
