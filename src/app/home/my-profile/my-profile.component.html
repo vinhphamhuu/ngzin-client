@@ -1,5 +1,26 @@
 <div class="h-full bg-gray-100" style="min-height: 100vh;">
-  <div class="container mx-auto my-5 p-5">
+  <div class="w-full container sticky bottom-2 p-5 pb-2 px-6 mx-auto flex items-center justify-between shadow-3xl text-gray-400 rounded-2xl cursor-pointer">
+    <div  class="h-8 flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+      <button type="button" class="flex items-center" (click)="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+        </svg>
+        <span class="pl-2">Back</span>
+      </button>
+    </div>
+    <!-- <div class="flex flex-col items-center  hover:text-blue-400 ">
+      <h2 class="text-lg md:text-2xl">My Profile</h2>
+    </div>
+    <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+        </path>
+      </svg>
+    </div> -->
+  </div>
+  <div class="container mx-auto my-5 p-5 pt-0">
     <div class="md:flex no-wrap md:-mx-2 ">
       <!-- Left Side -->
       <div class="w-full md:w-3/12 md:mx-2">

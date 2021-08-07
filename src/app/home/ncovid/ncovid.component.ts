@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NCovidService } from 'src/app/services/ncovid.service';
 import { Chart } from 'angular-highcharts';
 import { HC_VN_KEY } from 'src/app/services/hc-key.constant';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-ncovid',
@@ -20,7 +21,9 @@ export class NcovidComponent implements OnInit {
   }
   hcKeyVN: any = HC_VN_KEY;
 
-  constructor(private covidService: NCovidService) {
+  constructor(
+    private covidService: NCovidService,
+    private _location: Location) {
     this.dataSummary = [
       {
         id: 'infected',
@@ -64,6 +67,9 @@ export class NcovidComponent implements OnInit {
   ngOnInit() {
     this.getSummary();
     this.getReport();
+  }
+  goBack() {
+    this._location.back();
   }
 
   getReport() {

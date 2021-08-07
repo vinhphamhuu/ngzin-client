@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-home',
   templateUrl: './my-home.component.html',
-  styleUrls: ['./my-home.component.scss']
 })
 export class MyHomeComponent implements OnInit {
 
@@ -38,9 +38,12 @@ export class MyHomeComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  navToPage(page: string) {
+    this.router.navigateByUrl(page);    
   }
 
 }
