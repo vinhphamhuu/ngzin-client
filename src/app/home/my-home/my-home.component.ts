@@ -24,14 +24,14 @@ export class MyHomeComponent implements OnInit {
     },
     {
       id: 'covid',
-      name: 'Covid',
+      name: 'Thông tin Covid',
       path: '/covid',
       active: false,
       img: 'assets/images/home/coronavirus.png'
     },
     {
       id: 'my-profile',
-      name: 'Tác giả',
+      name: 'Thông tin',
       path: '/my-profile',
       active: true,
       img: 'assets/images/home/profile.png'
