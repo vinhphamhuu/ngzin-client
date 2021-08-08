@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { NonProfitService } from '../../services/non-profit.service';
 
 @Component({
   selector: 'app-non-profit',
@@ -12,133 +14,21 @@ export class NonProfitComponent implements OnInit {
     mainMember: '',
     countMember: 0
   };
+  listPromise: Array<Subscription> = [];
 
-  constructor() { }
+  constructor(private nonProfitService: NonProfitService) {
+    this.listPromise.push(this.nonProfitService.getUser().subscribe(res => {
+      this.userSelected.mainMember = res && res.mainMember;
+      this.userSelected.countMember = 5
+    }))
+   }
 
   ngOnInit() {
-    this.initListUsers();
   }
-  setUser(user: any) {
-    this.userSelected.mainMember = user.mainMember;
-    this.userSelected.countMember = 5
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    this.listPromise.forEach(element => {
+      element.unsubscribe();
+    });
   }
-
-  initListUsers() {
-    this.listUsers = [
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-female.png",
-        gender: 'female'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-female.png",
-        gender: 'female'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn A-1",
-        address: "Ấp 2",
-        mainMember: "Nguyên Văn A",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-      {
-        name: "Nguyễn Văn B-1",
-        address: "Ấp 1",
-        mainMember: "Nguyên Văn B",
-        avatar: "assets/images/non-profit/user-male.png",
-        gender: 'male'
-      },
-    ]
-  }
-
-
 }
