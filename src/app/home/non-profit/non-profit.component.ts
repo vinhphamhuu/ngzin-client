@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NonProfitService } from '../../services/non-profit.service';
+import { IUserSelectHead } from '../../model/index';
 
 @Component({
   selector: 'app-non-profit',
@@ -9,8 +10,7 @@ import { NonProfitService } from '../../services/non-profit.service';
 })
 export class NonProfitComponent implements OnInit {
 
-  listUsers: any = [];
-  userSelected: any = {
+  userSelected: IUserSelectHead = {
     mainMember: '',
     countMember: 0
   };

@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NonProfitService } from '../../../services/non-profit.service';
-
-export interface IUser{
-  id: number,
-  name: string,
-  address: string,
-  mainMember: string,
-  avatar: string,
-  gender: string,
-  selected: boolean;
-}
+import {Location} from '@angular/common';
+import { IUser } from '../../../model/index';
 
 @Component({
   selector: 'app-np-user-list',
@@ -19,11 +11,18 @@ export class NpUserListComponent implements OnInit {
 
   listUsers: IUser[] = [];
 
-  constructor(private nonProfitService: NonProfitService) { }
+  constructor(
+    private nonProfitService: NonProfitService,
+    private _location: Location
+  ) { }
 
   ngOnInit() {
     this.initListUsers();
   }
+  goBack() {
+    this._location.back();
+  }
+
   setUser(user: IUser) {
     this.nonProfitService.setUser(user);
     this.listUsers.forEach((el: { id: any; selected: boolean; }) => {
