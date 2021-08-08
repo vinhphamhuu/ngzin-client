@@ -23,6 +23,10 @@ const routes: Routes = [
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
+                path: 'non-profit',
+                loadChildren: () => import('./non-profit/non-profit.module').then(m => m.NoneProfitModule)
+            },
+            {
                 path: 'covid',
                 loadChildren: () => import('./ncovid/ncovid.module').then(m => m.NcovidModule)
             },

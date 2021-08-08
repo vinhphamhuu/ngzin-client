@@ -16,9 +16,9 @@ export class MyHomeComponent implements OnInit {
       img: 'assets/images/home/iot.png'
     },
     {
-      id: 'home',
-      name: 'Cúng sao',
-      path: '/home',
+      id: 'non-profit',
+      name: 'Phi lợi nhuận',
+      path: '/non-profit',
       active: false,
       img: 'assets/images/home/lotus.png'
     },
